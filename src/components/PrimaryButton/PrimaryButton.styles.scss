@@ -1,0 +1,15 @@
+.primary-button {
+  border: 0;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: #000000;
+    transform: translateX(5%);
+  }
+}

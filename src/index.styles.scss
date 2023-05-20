@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.mh-12 {
+  margin: 12px 0;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --smalt-blue: #43656F;
+  --silver-light: #E8ECEF;
+  --silver: #DDE1E4;
+}

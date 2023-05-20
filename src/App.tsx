@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import Home from "./pages/Home";
+import Reviews from "./pages/Reviews";
+import ReviewsWidget from "./pages/ReviewsWidget/ReviewsWidget";
+import GoBackButton from "./components/GoBackButton";
+import ProductListWidget from "./pages/ProductListWidget";
+
+import {
+  PRODUCT_LIST_WIDGET_PATH,
+  REVIEW_WIDGET_PATH,
+} from "./constants/paths";
+
+const App = () => (
+  <BrowserRouter>
+    <GoBackButton />
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path={REVIEW_WIDGET_PATH} element={<Reviews />} />
+        <Route path={`${REVIEW_WIDGET_PATH}/:id`} element={<ReviewsWidget />} />
+        <Route
+          path={PRODUCT_LIST_WIDGET_PATH}
+          element={<ProductListWidget />}
+        />
+      </Routes>
     </div>
-  );
-}
+  </BrowserRouter>
+);
 
 export default App;
